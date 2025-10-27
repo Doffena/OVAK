@@ -1,10 +1,8 @@
-Aşağıda OVAK (Optimal Veri Analizi ve Kümeleme) raporundaki içeriğe dayanarak, senin (Burak Avcı’nın) adına yazılmış tamamen özgün ve profesyonel bir **README.md** sürümü bulunuyor. Yapı modern GitHub formatına uygun; hem akademik hem de mühendislik odaklı bir tonla yazıldı.
-
 ---
 
 # OVAK: Optimal Veri Analizi ve Kümeleme Sistemi
 
-## 📘 Proje Özeti
+## Proje Özeti
 
 Bu proje, **sınırlı veri erişimi** koşullarında en iyi modeli elde etmeyi hedefleyen, matematiksel temelli bir veri analiz ve kümeleme platformudur.
 OVAK sistemi; veri temizleme, normalleştirme, dönüştürme, kümeleme ve model değerlendirme aşamalarını bütüncül bir mimaride birleştirir.
@@ -13,7 +11,7 @@ Proje kapsamında üç temel kümeleme algoritması (K-Means, DBSCAN, Hiyerarşi
 
 ---
 
-## 🧠 Bilimsel Yaklaşım
+## Bilimsel Yaklaşım
 
 ### 1. Veri Temizleme ve Ön İşleme
 
@@ -70,7 +68,7 @@ Proje kapsamında üç temel kümeleme algoritması (K-Means, DBSCAN, Hiyerarşi
 
 ---
 
-## ⚙️ Sistem Mimarisi
+##  Sistem Mimarisi
 
 1. **Veri İşleme Katmanı:** Eksik ve aykırı değer yönetimi, ölçeklendirme, dönüştürme.
 2. **Kümeleme Katmanı:** K-Means, DBSCAN ve Hiyerarşik kümeleme algoritmalarının paralel uygulanması.
@@ -79,7 +77,7 @@ Proje kapsamında üç temel kümeleme algoritması (K-Means, DBSCAN, Hiyerarşi
 
 ---
 
-## 📊 Bulgular
+##  Bulgular
 
 * **Veri erişiminin sınırlı olduğu ortamlarda** dahi yüksek doğrulukta modelleme mümkündür.
 * Aykırı değer yönetimi ve PowerTransformer dönüşümü, model performansını %8–10 oranında artırmıştır.
@@ -87,7 +85,7 @@ Proje kapsamında üç temel kümeleme algoritması (K-Means, DBSCAN, Hiyerarşi
 
 ---
 
-## 🔎 Gelecek Çalışmalar
+##  Gelecek Çalışmalar
 
 * Daha geniş veri setlerinde algoritmik optimizasyon.
 * Küme sayısının dinamik olarak belirlenmesi (AutoK).
@@ -96,19 +94,19 @@ Proje kapsamında üç temel kümeleme algoritması (K-Means, DBSCAN, Hiyerarşi
 
 ---
 
-## 👨‍💻 Geliştirici
+##  Geliştirici
 
 **Burak Avcı**
-📧 [burakavci0206@gmail.com](mailto:burakavci0206@gmail.com)
-🔗 [GitHub: Doffena](https://github.com/Doffena)
+ [burakavci0206@gmail.com](mailto:burakavci0206@gmail.com)
+ [GitHub: Doffena](https://github.com/Doffena)
 
 ---
 
-## ⚖️ Lisans
+##  Lisans
 
 Bu proje **Apache License 2.0** kapsamında açık kaynak olarak paylaşılmıştır.
 Detaylar için [LICENSE](https://github.com/apache/.github/blob/main/LICENSE) dosyasına bakabilirsiniz.
 
 ---
 
-İstersen bu README’ye ek olarak aşağıya “🔬 *Yeniden Üretim (Reproducibility)*” bölümü de ekleyebilirim — yani kodu nasıl çalıştıracağını (`main.py`, `requirements.txt`, `train.ipynb` vs.) içeren kısa terminal komutlarını. Ekleyeyim mi?
+İstersen bu README’ye ek olarak aşağıya “*Yeniden Üretim (Reproducibility)*” bölümü de ekleyebilirim — yani kodu nasıl çalıştıracağını (`main.py`, `requirements.txt`, `train.ipynb` vs.) içeren kısa terminal komutlarını. Ekleyeyim mi?
