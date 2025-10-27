@@ -146,6 +146,7 @@ Sonuç olarak, **Hiyerarşik Kümeleme yaklaşımı en yüksek stabiliteyi sağl
 ## Geliştirici
 
 Bu proje **Burak Avcı** tarafından geliştirilmiştir.
+
 **[burakavci0206@gmail.com](mailto:burakavci0206@gmail.com)**
 
 ---
