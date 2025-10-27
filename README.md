@@ -128,6 +128,7 @@ m: mini-batch boyutu
 
 ##  Geliştirici
 Bu proje Burak AVCI tarafından geliştirilmiştir.
+
 burakavci0206@gmail.com
 
 ---
