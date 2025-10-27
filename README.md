@@ -154,9 +154,3 @@ Bu proje **Burak Avcı** tarafından geliştirilmiştir.
 
 Bu proje **Apache License 2.0** kapsamında açık kaynak olarak paylaşılmıştır.
 Detaylar için [LICENSE](https://github.com/apache/.github/blob/main/LICENSE) dosyasına bakabilirsiniz.
-
----
-
-İstersen bir sonraki aşamada bu README’ye özel bir **Kurulum ve Çalıştırma (Reproducibility)** bölümü ekleyebilirim —
-örneğin terminalden çalıştırma adımları, environment kurulumu, ve veri dosyalarının dizin yapısı dahil şekilde.
-Ekleyeyim mi?
