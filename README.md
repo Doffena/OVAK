@@ -1,19 +1,19 @@
----
 
-# OVAK: Optimal Veri Analizi ve Kümeleme Sistemi
+#  OVAK: Optimal Veri Analizi ve Kümeleme Sistemi
 
-## Proje Özeti
+##  Proje Özeti
 
 Bu proje, **sınırlı veri erişimi** koşullarında en iyi modeli elde etmeyi hedefleyen, matematiksel temelli bir veri analiz ve kümeleme platformudur.
 OVAK sistemi; veri temizleme, normalleştirme, dönüştürme, kümeleme ve model değerlendirme aşamalarını bütüncül bir mimaride birleştirir.
 
-Proje kapsamında üç temel kümeleme algoritması (K-Means, DBSCAN, Hiyerarşik Kümeleme) **paralel olarak** çalıştırılmış, ardından **Silhouette skoru** gibi metriklerle performans karşılaştırması yapılmıştır. Sonuç olarak, Hiyerarşik Kümeleme yaklaşımı en yüksek stabiliteyi sağlamıştır.
+Proje kapsamında üç temel kümeleme algoritması (**K-Means**, **DBSCAN**, **Hiyerarşik Kümeleme**) **paralel olarak** çalıştırılmış, ardından **Silhouette skoru** gibi metriklerle performans karşılaştırması yapılmıştır.
+Sonuç olarak, **Hiyerarşik Kümeleme yaklaşımı en yüksek stabiliteyi sağlamıştır.**
 
 ---
 
 ## Bilimsel Yaklaşım
 
-### 1. Veri Temizleme ve Ön İşleme
+### Veri Temizleme ve Ön İşleme
 
 * **Eksik Değerlerin Doldurulması:**
   Sayısal değişkenler ortalama, kategorik değişkenler en sık gözlenen değer ile tamamlandı.
@@ -38,37 +38,37 @@ Proje kapsamında üç temel kümeleme algoritması (K-Means, DBSCAN, Hiyerarşi
 
 ---
 
-### 2. Kümeleme Yaklaşımları
+### Kümeleme Yaklaşımları
 
 | Algoritma      | Kriter               | Yöntem            | Sonuç                       |
 | -------------- | -------------------- | ----------------- | --------------------------- |
 | **K-Means**    | SSE Minimizasyonu    | Lloyd (1982)      | Silhouette = 0.6587         |
-| **DBSCAN**     | Yoğunluk tabanlı     | Eps=0.5, MinPts=5 | Tek kümede toplanma eğilimi |
+| **DBSCAN**     | Yoğunluk Tabanlı     | Eps=0.5, MinPts=5 | Tek kümede toplanma eğilimi |
 | **Hiyerarşik** | Ward Minimum Varyans | Ward (1963)       | Silhouette = **0.6721**     |
 
 > En iyi performans **Ward Hiyerarşik Kümeleme** yöntemiyle elde edilmiştir.
 
 ---
 
-### 3. Model Değerlendirme
+### Model Değerlendirme
 
-* **Silhouette Skoru (s)**
+* **Silhouette Skoru (s):**
   [
-  s(i) = \frac{b(i) - a(i)}{\max{a(i), b(i)}}
+  s(i) = \frac{b(i) - a(i)}{\max(a(i), b(i))}
   ]
 
-  * (a(i)): küme içi ortalama mesafe
-  * (b(i)): en yakın komşu kümeye ortalama mesafe
+  * *a(i):* küme içi ortalama mesafe
+  * *b(i):* en yakın komşu kümeye ortalama mesafe
 
 * **Performans Metrikleri:**
 
-  * Ortalama Silhouette: 0.67
-  * Model stabilitesi: %92
-  * Ortalama işlem süresi: < 50 ms
+  * Ortalama Silhouette: **0.67**
+  * Model stabilitesi: **%92**
+  * Ortalama işlem süresi: **< 50 ms**
 
 ---
 
-##  Sistem Mimarisi
+## Sistem Mimarisi
 
 1. **Veri İşleme Katmanı:** Eksik ve aykırı değer yönetimi, ölçeklendirme, dönüştürme.
 2. **Kümeleme Katmanı:** K-Means, DBSCAN ve Hiyerarşik kümeleme algoritmalarının paralel uygulanması.
@@ -77,15 +77,15 @@ Proje kapsamında üç temel kümeleme algoritması (K-Means, DBSCAN, Hiyerarşi
 
 ---
 
-##  Bulgular
+## Bulgular
 
 * **Veri erişiminin sınırlı olduğu ortamlarda** dahi yüksek doğrulukta modelleme mümkündür.
-* Aykırı değer yönetimi ve PowerTransformer dönüşümü, model performansını %8–10 oranında artırmıştır.
-* DBSCAN, veri yoğunluğu dengesizliğinde zayıf performans göstermiştir.
+* Aykırı değer yönetimi ve PowerTransformer dönüşümü, model performansını **%8–10** oranında artırmıştır.
+* **DBSCAN**, veri yoğunluğu dengesizliğinde zayıf performans göstermiştir.
 
 ---
 
-##  Gelecek Çalışmalar
+## Gelecek Çalışmalar
 
 * Daha geniş veri setlerinde algoritmik optimizasyon.
 * Küme sayısının dinamik olarak belirlenmesi (AutoK).
@@ -93,51 +93,70 @@ Proje kapsamında üç temel kümeleme algoritması (K-Means, DBSCAN, Hiyerarşi
 * Dağıtık işlem altyapısı (Ray, Dask) ile paralel eğitim.
 
 ---
-Performans Değerlendirmesi
-1. Kümeleme Kalitesi Metrikleri
-Silhouette Skoru: [-1, 1]
 
-0.7: Mükemmel ayrışma
+## Performans Değerlendirmesi
 
-0.5-0.7: Orta-iyi ayrışma
-< 0.5: Zayıf ayrışma
-Calinski-Harabasz Indeksi: [0, ∞)
+### Kümeleme Kalitesi Metrikleri
 
-Yüksek değerler daha iyi kümelemeyi gösterir
-Davies-Bouldin Indeksi: [0, ∞)
+* **Silhouette Skoru:** `[-1, 1]`
 
-Düşük değerler daha iyi kümelemeyi gösterir
-2. Hesaplama Karmaşıklığı
-K-Means: O(kndi)
+  > **0.7+** → Mükemmel ayrışma
+  > **0.5–0.7** → Orta–iyi ayrışma
+  > **< 0.5** → Zayıf ayrışma
 
-k: küme sayısı
-n: örnek sayısı
-d: boyut
-i: iterasyon sayısı
-DBSCAN: O(n log n)
+* **Calinski–Harabasz İndeksi:** `[0, ∞)`
 
-Optimizasyon ile O(n) mümkün
-Hiyerarşik: O(n²)
+  * Yüksek değerler daha iyi kümelemeyi gösterir.
 
-Bellek kullanımı: O(n²)
-3. Streaming Performans Metrikleri
-İşlem Gecikmesi: < 100ms/batch
-Bellek Kullanımı: O(k + m)
-k: aktif küme sayısı
-m: mini-batch boyutu
+* **Davies–Bouldin İndeksi:** `[0, ∞)`
 
-##  Geliştirici
-Bu proje Burak AVCI tarafından geliştirilmiştir.
-
-burakavci0206@gmail.com
+  * Düşük değerler daha başarılı ayrımı gösterir.
 
 ---
 
-##  Lisans
+### Hesaplama Karmaşıklığı
+
+* **K-Means:** `O(kndi)`
+
+  * k: küme sayısı
+  * n: örnek sayısı
+  * d: boyut
+  * i: iterasyon sayısı
+
+* **DBSCAN:** `O(n log n)`
+
+  * Optimizasyon ile `O(n)` seviyesine indirilebilir.
+
+* **Hiyerarşik:** `O(n²)`
+
+  * Bellek kullanımı: `O(n²)`
+
+---
+
+### Streaming Performans Metrikleri
+
+* **İşlem Gecikmesi:** `< 100ms/batch`
+* **Bellek Kullanımı:** `O(k + m)`
+
+  * k: aktif küme sayısı
+  * m: mini-batch boyutu
+
+---
+
+## Geliştirici
+
+Bu proje **Burak Avcı** tarafından geliştirilmiştir.
+**[burakavci0206@gmail.com](mailto:burakavci0206@gmail.com)**
+
+---
+
+## Lisans
 
 Bu proje **Apache License 2.0** kapsamında açık kaynak olarak paylaşılmıştır.
 Detaylar için [LICENSE](https://github.com/apache/.github/blob/main/LICENSE) dosyasına bakabilirsiniz.
 
 ---
 
-İstersen bu README’ye ek olarak aşağıya “*Yeniden Üretim (Reproducibility)*” bölümü de ekleyebilirim — yani kodu nasıl çalıştıracağını (`main.py`, `requirements.txt`, `train.ipynb` vs.) içeren kısa terminal komutlarını. Ekleyeyim mi?
+İstersen bir sonraki aşamada bu README’ye özel bir **Kurulum ve Çalıştırma (Reproducibility)** bölümü ekleyebilirim —
+örneğin terminalden çalıştırma adımları, environment kurulumu, ve veri dosyalarının dizin yapısı dahil şekilde.
+Ekleyeyim mi?
