@@ -44,7 +44,7 @@ Proje kapsamında üç temel kümeleme algoritması (K-Means, DBSCAN, Hiyerarşi
 | -------------- | -------------------- | ----------------- | --------------------------- |
 | **K-Means**    | SSE Minimizasyonu    | Lloyd (1982)      | Silhouette = 0.6587         |
 | **DBSCAN**     | Yoğunluk tabanlı     | Eps=0.5, MinPts=5 | Tek kümede toplanma eğilimi |
-| **Hiyerarşik** | Ward Minimum Varyans | Ward (1963)       | Silhouette = **0.6721** ✅   |
+| **Hiyerarşik** | Ward Minimum Varyans | Ward (1963)       | Silhouette = **0.6721**     |
 
 > En iyi performans **Ward Hiyerarşik Kümeleme** yöntemiyle elde edilmiştir.
 
