@@ -93,12 +93,42 @@ Proje kapsamında üç temel kümeleme algoritması (K-Means, DBSCAN, Hiyerarşi
 * Dağıtık işlem altyapısı (Ray, Dask) ile paralel eğitim.
 
 ---
+Performans Değerlendirmesi
+1. Kümeleme Kalitesi Metrikleri
+Silhouette Skoru: [-1, 1]
+
+0.7: Mükemmel ayrışma
+
+0.5-0.7: Orta-iyi ayrışma
+< 0.5: Zayıf ayrışma
+Calinski-Harabasz Indeksi: [0, ∞)
+
+Yüksek değerler daha iyi kümelemeyi gösterir
+Davies-Bouldin Indeksi: [0, ∞)
+
+Düşük değerler daha iyi kümelemeyi gösterir
+2. Hesaplama Karmaşıklığı
+K-Means: O(kndi)
+
+k: küme sayısı
+n: örnek sayısı
+d: boyut
+i: iterasyon sayısı
+DBSCAN: O(n log n)
+
+Optimizasyon ile O(n) mümkün
+Hiyerarşik: O(n²)
+
+Bellek kullanımı: O(n²)
+3. Streaming Performans Metrikleri
+İşlem Gecikmesi: < 100ms/batch
+Bellek Kullanımı: O(k + m)
+k: aktif küme sayısı
+m: mini-batch boyutu
 
 ##  Geliştirici
-
-**Burak Avcı**
- [burakavci0206@gmail.com](mailto:burakavci0206@gmail.com)
- [GitHub: Doffena](https://github.com/Doffena)
+Bu proje Burak AVCI tarafından geliştirilmiştir.
+burakavci0206@gmail.com
 
 ---
 
